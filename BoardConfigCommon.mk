@@ -24,6 +24,10 @@ TARGET_CPU_VARIANT  := cortex-a53
 TARGET_CPU_ABI      := armeabi-v7a
 TARGET_CPU_ABI2     := armeabi
 
+# The kernel runs the 64-bit binder ABI (protocol 8, android-3.18 backport); 32-bit
+# userspace defaults to the old 32-bit protocol 7, which servicemanager rejects.
+TARGET_USES_64_BIT_BINDER := true
+
 # CMHW
 BOARD_HARDWARE_CLASS += hardware/samsung/cmhw
 
